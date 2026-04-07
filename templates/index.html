@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ p.name }} – Portfólio Profissional</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">FDL</span>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero">
+    <div class="hero-content">
+      <div class="avatar">{{ p.name[0] }}</div>
+      <h1>{{ p.name }}</h1>
+      <p class="hero-title">{{ p.title }}</p>
+      <div class="target-chips">
+        {% for t in p.targets %}
+        <span class="chip">{{ t }}</span>
+        {% endfor %}
+      </div>
+      <div class="hero-cta">
+        <a href="#contato" class="btn-primary">Entre em Contato</a>
+        <a href="{{ p.linkedin }}" target="_blank" class="btn-outline">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-bg-shapes">
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+      <div class="shape s3"></div>
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre Mim</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>{{ p.summary }}</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">13+</span>
+            <span class="stat-label">Anos na Mercado Eletrônico</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Anos de Experiência em TI</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">14</span>
+            <span class="stat-label">Cursos & Certificações</span>
+          </div>
+          <div class="stat-card highlight">
+            <span class="stat-num">TOP ME</span>
+            <span class="stat-label">Prêmio de Reconhecimento Q2-2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia" class="bg-alt">
+    <div class="container">
+      <h2 class="section-title">Experiência Profissional</h2>
+      <div class="timeline">
+        {% for exp in p.experiences %}
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>{{ exp.role }}</h3>
+                <span class="company">{{ exp.company }}</span>
+                <span class="company-size">– {{ exp.size }}</span>
+              </div>
+              <span class="period-badge">{{ exp.period }}</span>
+            </div>
+            <p class="exp-desc">{{ exp.description }}</p>
+            {% if exp.highlights %}
+            <ul class="highlights">
+              {% for h in exp.highlights %}
+              <li>{{ h }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades">
+    <div class="container">
+      <h2 class="section-title">Habilidades</h2>
+      <div class="skills-grid">
+        {% for skill in p.skills %}
+        <div class="skill-pill">{{ skill }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAÇÃO -->
+  <section id="formacao" class="bg-alt">
+    <div class="container">
+      <h2 class="section-title">Formação Acadêmica</h2>
+      <div class="edu-grid">
+        {% for edu in p.education %}
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <h3>{{ edu.degree }}</h3>
+            <p>{{ edu.institution }}</p>
+            <span class="year-badge">{{ edu.year }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- CURSOS -->
+  <section id="cursos">
+    <div class="container">
+      <h2 class="section-title">Cursos & Certificações</h2>
+      <div class="courses-grid">
+        {% for c in p.courses %}
+        <div class="course-card">
+          <div class="course-top">
+            <span class="course-status {{ 'status-ongoing' if c.status == 'Em andamento' else 'status-done' }}">
+              {{ c.status }}
+            </span>
+            <span class="course-year">{{ c.year }}</span>
+          </div>
+          <h4>{{ c.name }}</h4>
+          {% if c.institution %}<p>{{ c.institution }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="bg-alt">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <p class="contact-sub">Aberto a novas oportunidades. Vamos conversar!</p>
+      <div class="contact-cards">
+        <a href="tel:+5511992371187" class="contact-card">
+          <span class="contact-icon">📱</span>
+          <span>{{ p.phone }}</span>
+        </a>
+        <a href="mailto:{{ p.email }}" class="contact-card">
+          <span class="contact-icon">✉️</span>
+          <span>{{ p.email }}</span>
+        </a>
+        <a href="{{ p.linkedin }}" target="_blank" class="contact-card">
+          <span class="contact-icon">💼</span>
+          <span>LinkedIn</span>
+        </a>
+        <div class="contact-card">
+          <span class="contact-icon">📍</span>
+          <span>{{ p.location }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 {{ p.name }} · Desenvolvido com Python & Flask</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
