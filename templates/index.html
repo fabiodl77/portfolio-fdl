@@ -28,7 +28,9 @@
   <!-- HERO -->
   <header id="hero">
     <div class="hero-content">
-      <div class="avatar">{{ p.name[0] }}</div>
+      <div class="avatar">
+        <img src="{{ url_for('static', filename='foto.png') }}" alt="{{ p.name }}" onerror="this.parentElement.innerHTML='{{ p.name[0] }}'"/>
+      </div>
       <h1>{{ p.name }}</h1>
       <p class="hero-title">{{ p.title }}</p>
       <div class="target-chips">

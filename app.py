@@ -8,7 +8,7 @@ profile = {
     "phone": "(11) 99237-1187",
     "email": "fabiodl77@gmail.com",
     "linkedin": "https://www.linkedin.com/in/fabio-diasluiz",
-    "location": "São Paulo, SP – Brasil",
+    "location": "Boituva, SP – Brasil",
     "targets": [
         "Analista DevOps",
         "Analista Funcional",
