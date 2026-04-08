@@ -7,8 +7,12 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 </head>
 <body>
+
+  <!-- BARRA DE PROGRESSO DE SCROLL -->
+  <div id="progress-bar"></div>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -27,12 +31,24 @@
 
   <!-- HERO -->
   <header id="hero">
+    <!-- Vídeo de fundo: coloque um arquivo "bg-video.mp4" em static/ para ativar -->
+    <video id="hero-video" autoplay muted loop playsinline>
+      <source src="{{ url_for('static', filename='bg-video.mp4') }}" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <!-- Partículas flutuantes -->
+    <canvas id="particles-canvas"></canvas>
+
     <div class="hero-content">
       <div class="avatar">
-        <img src="{{ url_for('static', filename='foto.png') }}" alt="{{ p.name }}" onerror="this.parentElement.innerHTML='{{ p.name[0] }}'"/>
+        <img src="{{ url_for('static', filename='foto.png') }}" alt="{{ p.name }}"
+             onerror="this.parentElement.innerHTML='{{ p.name[0] }}'"/>
       </div>
       <h1>{{ p.name }}</h1>
-      <p class="hero-title">{{ p.title }}</p>
+      <p class="hero-title">
+        Especialista em <span id="typewriter"></span><span class="tw-cursor">|</span>
+      </p>
       <div class="target-chips">
         {% for t in p.targets %}
         <span class="chip">{{ t }}</span>
@@ -43,11 +59,6 @@
         <a href="{{ p.linkedin }}" target="_blank" class="btn-outline">LinkedIn</a>
       </div>
     </div>
-    <div class="hero-bg-shapes">
-      <div class="shape s1"></div>
-      <div class="shape s2"></div>
-      <div class="shape s3"></div>
-    </div>
   </header>
 
   <!-- SOBRE -->
@@ -55,25 +66,38 @@
     <div class="container">
       <h2 class="section-title">Sobre Mim</h2>
       <div class="about-grid">
-        <div class="about-text">
-          <p>{{ p.summary }}</p>
+        <div class="about-left">
+          <p class="about-text">{{ p.summary }}</p>
+
+          <!-- Vídeo de apresentação -->
+          <div class="video-wrapper">
+            <video controls poster="{{ url_for('static', filename='foto.png') }}">
+              <source src="{{ url_for('static', filename='apresentacao.mp4') }}" type="video/mp4">
+              <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <p>Adicione o arquivo <strong>apresentacao.mp4</strong> em <code>static/</code> para exibir seu vídeo de apresentação</p>
+              </div>
+            </video>
+            <p class="video-label">Vídeo de Apresentação</p>
+          </div>
         </div>
+
         <div class="about-stats">
           <div class="stat-card">
-            <span class="stat-num">13+</span>
+            <span class="stat-num" data-target="13">0</span>
             <span class="stat-label">Anos na Mercado Eletrônico</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num">20+</span>
+            <span class="stat-num" data-target="20">0</span>
             <span class="stat-label">Anos de Experiência em TI</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num">14</span>
+            <span class="stat-num" data-target="14">0</span>
             <span class="stat-label">Cursos & Certificações</span>
           </div>
           <div class="stat-card highlight">
-            <span class="stat-num">TOP ME</span>
-            <span class="stat-label">Prêmio de Reconhecimento Q2-2024</span>
+            <span class="stat-num trophy-card">🏆</span>
+            <span class="stat-label">Prêmio TOP ME — Q2-2024</span>
           </div>
         </div>
       </div>
@@ -90,10 +114,13 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div>
-                <h3>{{ exp.role }}</h3>
-                <span class="company">{{ exp.company }}</span>
-                <span class="company-size">– {{ exp.size }}</span>
+              <div class="timeline-header-left">
+                <div class="company-badge">{{ exp.short }}</div>
+                <div>
+                  <h3>{{ exp.role }}</h3>
+                  <span class="company">{{ exp.company }}</span>
+                  <span class="company-size">– {{ exp.size }}</span>
+                </div>
               </div>
               <span class="period-badge">{{ exp.period }}</span>
             </div>
@@ -118,7 +145,14 @@
       <h2 class="section-title">Habilidades</h2>
       <div class="skills-grid">
         {% for skill in p.skills %}
-        <div class="skill-pill">{{ skill }}</div>
+        <div class="skill-pill">
+          {% if skill.icon.startswith('devicon') %}
+            <i class="{{ skill.icon }} skill-devicon"></i>
+          {% else %}
+            <span class="skill-emoji">{{ skill.icon }}</span>
+          {% endif %}
+          <span>{{ skill.name }}</span>
+        </div>
         {% endfor %}
       </div>
     </div>
@@ -169,22 +203,36 @@
     <div class="container">
       <h2 class="section-title">Contato</h2>
       <p class="contact-sub">Aberto a novas oportunidades. Vamos conversar!</p>
-      <div class="contact-cards">
-        <a href="tel:+5511992371187" class="contact-card">
-          <span class="contact-icon">📱</span>
-          <span>{{ p.phone }}</span>
-        </a>
-        <a href="mailto:{{ p.email }}" class="contact-card">
-          <span class="contact-icon">✉️</span>
-          <span>{{ p.email }}</span>
-        </a>
-        <a href="{{ p.linkedin }}" target="_blank" class="contact-card">
-          <span class="contact-icon">💼</span>
-          <span>LinkedIn</span>
-        </a>
-        <div class="contact-card">
-          <span class="contact-icon">📍</span>
-          <span>{{ p.location }}</span>
+      <div class="contact-layout">
+        <div class="contact-cards">
+          <a href="tel:+5511992371187" class="contact-card">
+            <span class="contact-icon">📱</span>
+            <span>{{ p.phone }}</span>
+          </a>
+          <a href="mailto:{{ p.email }}" class="contact-card">
+            <span class="contact-icon">✉️</span>
+            <span>{{ p.email }}</span>
+          </a>
+          <a href="{{ p.linkedin }}" target="_blank" class="contact-card">
+            <span class="contact-icon">💼</span>
+            <span>LinkedIn</span>
+          </a>
+          <div class="contact-card">
+            <span class="contact-icon">📍</span>
+            <span>{{ p.location }}</span>
+          </div>
+        </div>
+
+        <!-- Mapa de Boituva via OpenStreetMap -->
+        <div class="map-wrapper">
+          <iframe
+            title="Boituva, SP"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-47.714%2C-23.324%2C-47.634%2C-23.284&layer=mapnik&marker=-23.304%2C-47.674"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+          <a href="https://www.openstreetmap.org/?mlat=-23.304&mlon=-47.674#map=14/-23.304/-47.674"
+             target="_blank" class="map-link">Ver mapa maior ↗</a>
         </div>
       </div>
     </div>
@@ -194,6 +242,9 @@
     <p>© 2026 {{ p.name }} · Desenvolvido com Python & Flask</p>
   </footer>
 
+  <script>
+    const TARGETS = {{ p.targets | tojson }};
+  </script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
