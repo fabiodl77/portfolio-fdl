@@ -32,6 +32,7 @@ Single-file Flask app (`app.py`) with no database. All profile content lives in 
 - `static/css/style.css` — all styles (CSS custom properties in `:root` for theming)
 - `static/js/main.js` — navbar scroll effect, active link highlight, IntersectionObserver fade-ins
 - `static/foto.png` — profile photo rendered in the hero avatar
+- `static/bg-hero.svg` — hero background image: SVG grid of 12 tech/company cards (AWS, N8N, Python, OCI, IA, Hashtag Treinamentos, DevSecOps, SQL Server, Windows Server, Scrum, Mercado Eletrônico, DIO). To swap the background, edit the `background-image` property in the `#hero` rule inside `style.css`.
 
 ## Key data structures in `app.py`
 
