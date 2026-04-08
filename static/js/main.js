@@ -188,7 +188,7 @@ if (skillsSection) skillObserver.observe(skillsSection);
    7. FADE-IN GENÉRICO (cards, etc.)
    ============================================= */
 const fadeEls = document.querySelectorAll(
-  '.stat-card, .timeline-card, .edu-card, .course-card, .contact-card, .about-text, .video-wrapper, .map-wrapper'
+  '.stat-card, .timeline-card, .edu-card, .course-card, .contact-card, .about-text, .map-wrapper'
 );
 
 fadeEls.forEach(el => el.classList.add('fade-in'));

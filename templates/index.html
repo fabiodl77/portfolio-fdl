@@ -31,10 +31,6 @@
 
   <!-- HERO -->
   <header id="hero">
-    <!-- Vídeo de fundo: coloque um arquivo "bg-video.mp4" em static/ para ativar -->
-    <video id="hero-video" autoplay muted loop playsinline>
-      <source src="{{ url_for('static', filename='bg-video.mp4') }}" type="video/mp4">
-    </video>
     <div class="hero-overlay"></div>
 
     <!-- Partículas flutuantes -->
@@ -69,17 +65,6 @@
         <div class="about-left">
           <p class="about-text">{{ p.summary }}</p>
 
-          <!-- Vídeo de apresentação -->
-          <div class="video-wrapper">
-            <video controls poster="{{ url_for('static', filename='foto.png') }}">
-              <source src="{{ url_for('static', filename='apresentacao.mp4') }}" type="video/mp4">
-              <div class="video-placeholder">
-                <div class="play-icon">▶</div>
-                <p>Adicione o arquivo <strong>apresentacao.mp4</strong> em <code>static/</code> para exibir seu vídeo de apresentação</p>
-              </div>
-            </video>
-            <p class="video-label">Vídeo de Apresentação</p>
-          </div>
         </div>
 
         <div class="about-stats">

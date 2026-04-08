@@ -102,14 +102,14 @@ nav ul a.active {
   padding: 80px 24px 60px;
 }
 
-/* Vídeo de fundo */
-#hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0.25;
-  z-index: 0;
+/* Imagem de fundo do hero
+   Para trocar, edite background-image abaixo com o caminho da imagem desejada.
+   Ex: url('/static/bg-tech.jpg') ou uma URL externa.
+   Deixe 'none' para usar apenas o gradiente. */
+#hero {
+  background-image: none; /* Substitua por: url('/static/bg-hero.jpg') */
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-overlay {
@@ -250,43 +250,6 @@ section { padding: 90px 0; }
   color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.9;
-}
-
-/* Vídeo de apresentação */
-.video-wrapper {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: #0f172a;
-}
-.video-wrapper video {
-  width: 100%;
-  display: block;
-  max-height: 260px;
-  object-fit: cover;
-  background: #0f172a;
-}
-.video-placeholder {
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 40px 24px; text-align: center;
-  color: rgba(255,255,255,0.6); gap: 12px;
-}
-.play-icon {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  border: 2px solid rgba(255,255,255,0.3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
-}
-.video-label {
-  text-align: center;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  padding: 8px;
-  background: var(--card-bg);
-  font-weight: 600;
 }
 
 /* Stat cards */
