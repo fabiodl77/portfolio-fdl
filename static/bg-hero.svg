@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="700" viewBox="0 0 1400 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0d1b2a"/>
+      <stop offset="50%"  stop-color="#1a2f4a"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.07)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="700" fill="url(#bg-grad)"/>
+  <rect width="1400" height="700" fill="url(#dots)"/>
+
+  <!-- Decorative glow orbs -->
+  <circle cx="140"  cy="130" r="110" fill="rgba(37,99,235,0.07)"/>
+  <circle cx="1300" cy="580" r="130" fill="rgba(6,182,212,0.06)"/>
+  <circle cx="700"  cy="600" r="170" fill="rgba(139,92,246,0.05)"/>
+  <circle cx="700"  cy="120" r="90"  fill="rgba(255,153,0,0.04)"/>
+
+  <!-- Title -->
+  <line x1="190" y1="76" x2="545" y2="76" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <circle cx="700" cy="76" r="3" fill="rgba(255,255,255,0.22)"/>
+  <line x1="855" y1="76" x2="1210" y2="76" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="700" y="80" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="12" font-weight="700"
+        fill="rgba(255,255,255,0.32)" letter-spacing="7">
+    TECH ECOSYSTEM  •  FABIO DIAS LUIZ
+  </text>
+
+  <!-- Subtle connector lines between cards (decorative) -->
+  <line x1="407" y1="177" x2="429" y2="177" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="689" y1="177" x2="711" y2="177" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="971" y1="177" x2="993" y2="177" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="407" y1="292" x2="429" y2="292" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="689" y1="292" x2="711" y2="292" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="971" y1="292" x2="993" y2="292" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="407" y1="407" x2="429" y2="407" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="689" y1="407" x2="711" y2="407" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="971" y1="407" x2="993" y2="407" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- ==================== ROW 1 ==================== -->
+
+  <!-- Card 1: AWS -->
+  <g transform="translate(147, 130)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(255,153,0,0.10)" stroke="rgba(255,153,0,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#FF9900"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="28" font-weight="900" fill="#FF9900">AWS</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Amazon Web Services</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Cloud Infrastructure</text>
+  </g>
+
+  <!-- Card 2: N8N -->
+  <g transform="translate(429, 130)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(234,75,113,0.10)" stroke="rgba(234,75,113,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#EA4B71"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="28" font-weight="900" fill="#EA4B71">N8N</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">N8N Automation</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Automação de Fluxos · DIO Bootcamp</text>
+  </g>
+
+  <!-- Card 3: Python -->
+  <g transform="translate(711, 130)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(55,118,171,0.10)" stroke="rgba(55,118,171,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#3776AB"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="26" font-weight="900" fill="#3776AB">Python</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Python Impressionador</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Hashtag Treinamentos · 2024</text>
+  </g>
+
+  <!-- Card 4: Oracle Cloud -->
+  <g transform="translate(993, 130)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(248,0,0,0.10)" stroke="rgba(248,0,0,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#F80000"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="28" font-weight="900" fill="#F80000">OCI</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Oracle Cloud Infrastructure</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Cloud · Database · Alura</text>
+  </g>
+
+  <!-- ==================== ROW 2 ==================== -->
+
+  <!-- Card 5: Inteligência Artificial -->
+  <g transform="translate(147, 245)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(139,92,246,0.10)" stroke="rgba(139,92,246,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#8B5CF6"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="36" font-weight="900" fill="#8B5CF6">IA</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Inteligência Artificial</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Machine Learning · IA Generativa</text>
+  </g>
+
+  <!-- Card 6: Hashtag Treinamentos -->
+  <g transform="translate(429, 245)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(239,68,68,0.10)" stroke="rgba(239,68,68,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#EF4444"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="22" font-weight="900" fill="#EF4444">#Hashtag</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Hashtag Treinamentos</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Python Impressionador · IA Impressionador</text>
+  </g>
+
+  <!-- Card 7: DevSecOps -->
+  <g transform="translate(711, 245)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(16,185,129,0.10)" stroke="rgba(16,185,129,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#10B981"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="22" font-weight="900" fill="#10B981">DevSecOps</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">DevSecOps</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Dev · Security · Ops · School of Net</text>
+  </g>
+
+  <!-- Card 8: SQL Server -->
+  <g transform="translate(993, 245)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(204,41,39,0.10)" stroke="rgba(204,41,39,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#CC2927"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="28" font-weight="900" fill="#CC2927">SQL</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">SQL Server</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Banco de Dados · Queries · Impacta</text>
+  </g>
+
+  <!-- ==================== ROW 3 ==================== -->
+
+  <!-- Card 9: Windows Server -->
+  <g transform="translate(147, 360)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(0,164,239,0.10)" stroke="rgba(0,164,239,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#00A4EF"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="24" font-weight="900" fill="#00A4EF">Windows</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Windows Server</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Infra · Redes · MCSA 2012 · Impacta</text>
+  </g>
+
+  <!-- Card 10: Metodologia Ágil -->
+  <g transform="translate(429, 360)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(245,158,11,0.10)" stroke="rgba(245,158,11,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#F59E0B"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="20" font-weight="900" fill="#F59E0B">SCRUM</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Metodologia Ágil</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Scrum · Kanban · Sprint Planning</text>
+  </g>
+
+  <!-- Card 11: Mercado Eletrônico -->
+  <g transform="translate(711, 360)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(37,99,235,0.10)" stroke="rgba(37,99,235,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#2563EB"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="32" font-weight="900" fill="#2563EB">ME</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">Mercado Eletrônico S/A</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">13 anos · Analista Funcional II · TOP ME</text>
+  </g>
+
+  <!-- Card 12: DIO -->
+  <g transform="translate(993, 360)">
+    <rect width="260" height="95" rx="12"
+          fill="rgba(99,102,241,0.10)" stroke="rgba(99,102,241,0.38)" stroke-width="1.5"/>
+    <rect width="5" height="75" rx="2.5" x="0" y="10" fill="#6366F1"/>
+    <text x="26" y="51" font-family="Arial Black, Arial, sans-serif"
+          font-size="32" font-weight="900" fill="#6366F1">DIO</text>
+    <text x="26" y="69" font-family="Arial, sans-serif"
+          font-size="11.5" fill="rgba(255,255,255,0.80)">DIO</text>
+    <text x="26" y="83" font-family="Arial, sans-serif"
+          font-size="10" fill="rgba(255,255,255,0.38)">Santander Bootcamp 2025 · N8N · Cloud</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="147" y1="500" x2="1253" y2="500" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="700" y="524" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="11" font-weight="500"
+        fill="rgba(255,255,255,0.18)" letter-spacing="3">
+    BOITUVA, SP  •  BRASIL  •  ANALISTA FUNCIONAL &amp; DEVOPS
+  </text>
+</svg>

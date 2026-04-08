@@ -102,12 +102,9 @@ nav ul a.active {
   padding: 80px 24px 60px;
 }
 
-/* Imagem de fundo do hero
-   Para trocar, edite background-image abaixo com o caminho da imagem desejada.
-   Ex: url('/static/bg-tech.jpg') ou uma URL externa.
-   Deixe 'none' para usar apenas o gradiente. */
+/* Imagem de fundo do hero — troque bg-hero.svg por outra imagem se desejar */
 #hero {
-  background-image: none; /* Substitua por: url('/static/bg-hero.jpg') */
+  background-image: url('/static/bg-hero.svg');
   background-size: cover;
   background-position: center;
 }
