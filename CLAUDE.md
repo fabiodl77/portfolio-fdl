@@ -23,6 +23,15 @@ git push
 
 Production start command (defined in `render.yaml`): `gunicorn app:app`
 
+## Render Free Tier — Cold Start
+
+O plano gratuito do Render hiberna a instância após ~15 minutos de inatividade. Na próxima requisição, exibe uma tela de inicialização ("SERVIÇO SENDO ATIVADO...") enquanto reinicia o servidor (30–60 segundos). Isso é comportamento normal, não um erro.
+
+**Opções para evitar:**
+- **Upgrade para Starter** ($7/mês) — instância sempre ativa.
+- **UptimeRobot (gratuito)** — cadastrar a URL do portfolio para ping a cada 5–10 minutos, mantendo a instância acordada.
+- Aceitar o comportamento se disponibilidade imediata não for crítica.
+
 ## Architecture
 
 Single-file Flask app (`app.py`) with no database. All profile content lives in the `profile` dict at the top of `app.py` — this is the only place to edit personal data (name, experiences, skills, courses, etc.).
